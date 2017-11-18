@@ -1,0 +1,28 @@
+<div>
+  <textarea rows="10" class="speech-editor form-control" [(ngModel)]="selectedspeech.content" placeholder="Content"></textarea>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" id="author" class="form-control" [(ngModel)]="selectedspeech.author" placeholder="Author"/>
+    </div>
+    <div class="col-md-4">
+      <input type="text" id="keywords" class="form-control" [(ngModel)]="selectedspeech.keywords" placeholder="Subject Area Keywords"/>
+    </div>
+    <div class="col-md-4">
+      <input type="date" id="date" class="form-control" [ngModel]="selectedspeech.date  | date:'yyyy-MM-dd'" (ngModelChange)="date = $event" placeholder="Date" required="required"/>
+    </div>
+  </div>
+   <div class="row">
+      <div class="col-sm-2 col-sm-offset-3">
+        <button id="deleteBtn" class="btn" [disabled]="!selectedspeech.id" (click)="delete()">Delete</button>
+      </div>
+      <div class="col-sm-2">
+        <button id="saveBtn" class="btn" [disabled]="!selectedspeech.id" (click)="save()">Save</button>
+      </div>
+      <div class="col-sm-3">
+        <button id="saveAsNewButton" class="btn" (click)="saveAsNew()">Save as New</button>
+      </div>
+      <div class="col-sm-2">
+        <button id="shareBtn" class="btn" [disabled]="!selectedspeech.id">Share</button>
+      </div>
+   </div>
+</div>

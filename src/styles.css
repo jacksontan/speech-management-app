@@ -1,0 +1,19 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.row {
+	margin-top: 10px;
+}
+.app-content {
+	background-color: #f5f4f4;
+	margin: 30px;
+}
+.speech-title {
+	margin-top: 20px;
+  text-align:center;
+}
+.speech-editor {
+	width: 100%;
+}
