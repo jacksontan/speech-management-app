@@ -7,7 +7,7 @@ import { Speech } from '../models/Speech';
 })
 export class SpeechFormComponent  { 
 	
-	@Input() selectedspeech: Speech;
+	@Input() selectedspeech: Speech = new Speech({});
 	@Output() onsave = new EventEmitter<Speech>();
 	@Output() onsaveasnew = new EventEmitter<Speech>();
 	@Output() ondelete = new EventEmitter<Speech>();
