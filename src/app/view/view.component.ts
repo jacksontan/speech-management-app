@@ -29,10 +29,11 @@ export class ViewSpeechComponent  {
 	}
 
 	addSpeech(speech: Speech) {
-		speech.id = this.getLatestSpeechId() + 1;
-		this.speechService.addSpeech(speech);
-		this.selectedSpeech = speech;
-		alert('Successfully Created Speech ' + speech.id);
+		let clonedSpeech = JSON.parse(JSON.stringify(speech));
+		clonedSpeech.id = this.getLatestSpeechId() + 1;
+		this.speechService.addSpeech(clonedSpeech);
+		this.selectedSpeech = clonedSpeech;
+		alert('Successfully Created Speech ' + clonedSpeech.id);
 	}
 
 	deleteSpeech(speech: Speech) {
@@ -40,6 +41,11 @@ export class ViewSpeechComponent  {
 		this.selectedSpeech = new Speech({});
 		alert('Successfully Deleted Speech ' + speech.id);
 	}
+
+	shareSpeech(speech: Speech) {
+		window.open('mailto:', '_self');
+	}
+
 	private getLatestSpeechId() {
 		return Math.max.apply(null, this.speeches.map((obj) => obj.id));
 	}

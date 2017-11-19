@@ -11,6 +11,7 @@ export class SpeechFormComponent  {
 	@Output() onsave = new EventEmitter<Speech>();
 	@Output() onsaveasnew = new EventEmitter<Speech>();
 	@Output() ondelete = new EventEmitter<Speech>();
+	@Output() onshare = new EventEmitter<Speech>();
 
 	constructor() {
 		this.selectedspeech = new Speech({});
@@ -26,5 +27,9 @@ export class SpeechFormComponent  {
 
 	delete() {
 		this.ondelete.emit(this.selectedspeech);
+	}
+
+	share() {
+		this.onshare.emit(this.selectedspeech);
 	}
 }

@@ -3,6 +3,6 @@
     <speech-list [speeches]="speeches" [activeSpeech]="selectedSpeech.id" (selectSpeech)="setSpeech($event)"></speech-list>
   </div>
   <div class="col-md-6">
-    <speech-form [selectedspeech]="selectedSpeech" (onsave)="saveSpeech($event)" (onsaveasnew)="addSpeech($event)" (ondelete)="deleteSpeech($event)"></speech-form>
+    <speech-form [selectedspeech]="selectedSpeech" (onsave)="saveSpeech($event)" (onsaveasnew)="addSpeech($event)" (ondelete)="deleteSpeech($event)" (onshare)="shareSpeech($event)"></speech-form>
   </div>
 </div>

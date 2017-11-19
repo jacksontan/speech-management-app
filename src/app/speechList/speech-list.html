@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="list-group">
-		  <a *ngFor="#speech of (speeches | filterSpeech: searchText)" href="#" class="list-group-item list-group-item-action" (click)="toggleSpeech(speech)" [ngClass]="{'active': activeSpeech === speech.id}">Speech {{ speech.id }}</a>
+		  <a *ngFor="let speech of (speeches | filterSpeech: searchText)" href="#" class="list-group-item list-group-item-action" (click)="toggleSpeech(speech)" [ngClass]="{'active': activeSpeech === speech.id}">Speech {{ speech.id }}</a>
 		</div>
 	</div>
 </div>

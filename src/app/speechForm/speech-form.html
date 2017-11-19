@@ -22,7 +22,7 @@
         <button id="saveAsNewButton" class="btn" (click)="saveAsNew()">Save as New</button>
       </div>
       <div class="col-sm-2">
-        <button id="shareBtn" class="btn" [disabled]="!selectedspeech.id">Share</button>
+        <button id="shareBtn" class="btn" [disabled]="!selectedspeech.id" (click)="share()">Share</button>
       </div>
    </div>
 </div>
