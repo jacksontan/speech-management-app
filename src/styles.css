@@ -17,3 +17,7 @@ h1 {
 .speech-editor {
 	width: 100%;
 }
+
+.btn-container>.btn {
+	margin-right: 15px;
+}

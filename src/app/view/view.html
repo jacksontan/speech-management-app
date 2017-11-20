@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-1 col-xs-offset-11">
+	<div class="pull-right">
 		<a href="/logout">Logout</a>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 		  <div class="col-md-3 col-md-offset-1">
 		    <speech-list [speeches]="speeches" [activeSpeech]="selectedSpeech.id" (selectSpeech)="setSpeech($event)"></speech-list>
 		  </div>
-		  <div class="col-md-6">
+		  <div class="col-md-8">
 		    <speech-form [selectedspeech]="selectedSpeech" (onsave)="saveSpeech($event)" (onsaveasnew)="addSpeech($event)" (ondelete)="deleteSpeech($event)" (onshare)="shareSpeech($event)"></speech-form>
 		  </div>
 		</div>

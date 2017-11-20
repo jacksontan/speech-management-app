@@ -46,7 +46,7 @@ export class ViewSpeechComponent  {
 		window.open('mailto:', '_self');
 		let emailTo = '';
 		let emailBody = speech.content;
-		let emailSub = speech.author + ' has shared his Speech ' + speech.id + ' to you'
+		let emailSub = speech.author + ' has shared his Speech "' + speech.title + '" to you';
 		location.href = "mailto:" + emailTo + '?subject=' + emailSub + '&body=' + emailBody;
 	}
 
