@@ -44,6 +44,10 @@ export class ViewSpeechComponent  {
 
 	shareSpeech(speech: Speech) {
 		window.open('mailto:', '_self');
+		let emailTo = '';
+		let emailBody = speech.content;
+		let emailSub = speech.author + ' has shared his Speech ' + speech.id + ' to you'
+		location.href = "mailto:" + emailTo + '?subject=' + emailSub + '&body=' + emailBody;
 	}
 
 	private getLatestSpeechId() {

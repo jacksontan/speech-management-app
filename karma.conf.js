@@ -9,9 +9,10 @@ module.exports = function(config) {
 
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'browserify'],
 
     plugins: [
+      'karma-browserify',
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter')
@@ -46,6 +47,9 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
+      
+      // include unit test specs
+      'src/test/*.spec.js',
 
       // RxJs
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
@@ -58,7 +62,6 @@ module.exports = function(config) {
 
       { pattern: appBase + '/systemjs.config.js', included: false, watched: false },
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
-      'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: false, watched: true },
@@ -80,13 +83,12 @@ module.exports = function(config) {
     // Proxied base paths for loading assets
     proxies: {
       // required for modules fetched by SystemJS
-      '/base/src/node_modules/': '/base/node_modules/'
+      '/src/node_modules/': '/node_modules/'
     },
 
     exclude: [],
-    preprocessors: {},
+    preprocessors: {'src/test/*.spec.js': ['browserify']},
     reporters: ['progress', 'kjhtml'],
-
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

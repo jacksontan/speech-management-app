@@ -1,8 +1,0 @@
-<div class="row">
-  <div class="col-md-3 col-md-offset-1">
-    <speech-list [speeches]="speeches" (selectSpeech)="setSpeech($event)"></speech-list>
-  </div>
-  <div class="col-md-6">
-    <speech-form [selectedspeech]="selectedSpeech" (onsave)="saveSpeech($event)" (ondelete)="deleteSpeech($event)"></speech-form>
-  </div>
-</div>

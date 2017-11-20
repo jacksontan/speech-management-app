@@ -41,7 +41,7 @@ System.config({
 
   // Assume npm: is set in `paths` in systemjs.config
   // Map the angular testing umd bundles
-  map: {
+/*  map: {
     '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
     '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',
     '@angular/compiler/testing': 'npm:@angular/compiler/bundles/compiler-testing.umd.js',
@@ -51,6 +51,7 @@ System.config({
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
     '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
   },
+  */
 });
 
 System.import('systemjs.config.js')
